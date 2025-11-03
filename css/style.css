@@ -1,0 +1,389 @@
+body {
+  background-image: url('https://wallpapers.com/images/hd/1920-x-1080-night-city-woman-sitting-on-a-building-edge-szkmng60p73g3v9z.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  transition: background 1s ease-in-out;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 2px;
+  width: 100%;
+  max-width: 90vw;
+  aspect-ratio: 1 / 1;
+  margin: 20px auto;
+  border: 4px solid #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cell {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(20px, 4vw, 32px);
+  cursor: pointer;
+  user-select: none;
+}
+
+.black {
+  background: #444;
+  color: white;
+}
+
+.white {
+  background: #eee;
+}
+
+.selected {
+  outline: 3px solid gold;
+}
+
+.scoreboard {
+  font-size: clamp(16px, 2vw, 18px);
+  margin-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.option1 {
+  --border-radius: 14px;
+  --border-width: 3px;
+  padding: 5px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-family: "Poppins", "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 610;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #111;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 0, 90, 0.25);
+  z-index: 1;
+}
+
+.option1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background: conic-gradient(from 0deg,
+      #ff004c,
+      #ff9f0e,
+      #ffee00,
+      #00ffc3,
+      #0077ff,
+      #d400ff,
+      #ff004c);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: option 3s linear infinite;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.option1:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 35px rgba(255, 0, 90, 0.6),
+    0 0 60px rgba(255, 230, 0, 0.4);
+}
+
+.option1:active {
+  transform: scale(0.96);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  color: #ff007f;
+  text-shadow:
+    0 0 5px #ff007f,
+    0 0 10px #ff007f,
+    0 0 20px #ff007f;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.text-pink-glow {
+  color: #ff007f;
+  text-shadow: 0 0 5px #ff007f, 0 0 10px #ff007f, 0 0 20px #ff007f;
+  font-family: 'Cursive', sans-serif;
+}
+
+.neon-glow {
+  background-color: #1a1a1a;
+  border: 2px solid #ff007f;
+  box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+  color: #fff;
+  font-family: 'Cursive', sans-serif;
+}
+
+.text-pink {
+  color: #ff69b4;
+  text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.intro-container {
+  background: radial-gradient(circle at 20% 20%, #ff0066, transparent 40%),
+    radial-gradient(circle at 80% 30%, #ffcc00, transparent 40%),
+    radial-gradient(circle at 50% 80%, #00ffcc, transparent 40%),
+    #0a0a0a;
+  background-size: 200% 200%;
+  animation: moveGradient 8s ease-in-out infinite alternate;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.glass-card {
+  width: 400px;
+  border-radius: 20px;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 40px rgba(255, 0, 120, 0.2);
+  color: #fff;
+}
+
+.neon-text {
+  color: #ff0095;
+  text-shadow:
+    0 0 10px #ff0095,
+    0 0 20px #ff0095,
+    0 0 40px #ff0095;
+}
+
+#playerName {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+#playerName:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #00fff0;
+  box-shadow: 0 0 10px #00fff0;
+}
+
+#startGameBtn {
+  --border-radius: 14px;
+  --border-width: 3px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0.9em 2.2em;
+  font-family: "Poppins", "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #111;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 0, 90, 0.25);
+  z-index: 1;
+}
+
+#startGameBtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background: conic-gradient(from 0deg,
+      #ff004c,
+      #ff9f0e,
+      #ffee00,
+      #00ffc3,
+      #0077ff,
+      #d400ff,
+      #ff004c);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: hueRotate 3s linear infinite;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+#startGameBtn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 35px rgba(255, 0, 90, 0.6),
+    0 0 60px rgba(255, 230, 0, 0.4);
+}
+
+#startGameBtn:active {
+  transform: scale(0.96);
+}
+
+@keyframes hueRotate {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.option {
+  --border-radius: 14px;
+  --border-width: 3px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0.9em 2.2em;
+  font-family: "Poppins", "Roboto", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #111;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 0, 90, 0.25);
+  z-index: 1;
+}
+
+.option::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: var(--border-width);
+  border-radius: var(--border-radius);
+  background: conic-gradient(from 0deg,
+      #ff004c,
+      #ff9f0e,
+      #ffee00,
+      #00ffc3,
+      #0077ff,
+      #d400ff,
+      #ff004c);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: option 3s linear infinite;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.option:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 35px rgba(255, 0, 90, 0.6),
+    0 0 60px rgba(255, 230, 0, 0.4);
+}
+
+.option:active {
+  transform: scale(0.96);
+}
+
+@keyframes option {
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+
+.flip-in-ver-right {
+  -webkit-animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: flip-in-ver-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes flip-in-ver-right {
+  0% {
+    -webkit-transform: rotateY(80deg);
+    transform: rotateY(80deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flip-in-ver-right {
+  0% {
+    -webkit-transform: rotateY(80deg);
+    transform: rotateY(80deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+.flip-in-ver-right {
+  -webkit-animation: flip-in-ver-right 2s cubic-bezier(0.25, 1, 0.3, 1) both;
+  animation: flip-in-ver-right 2s cubic-bezier(0.25, 1, 0.3, 1) both;
+}
