@@ -35,3 +35,6 @@ const displayContainer = (optional) => {
       break;
   }
 };
+
+// index.js
+module.exports = displayContainer;
